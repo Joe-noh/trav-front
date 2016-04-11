@@ -1,8 +1,7 @@
 {
   "name": "trav",
   "version": "0.1.0",
-  "description": "",
-  "main": "main.js",
+  "description": "frontend app for trav-api",
   "dependencies": {},
   "devDependencies": {
     "webpack": "^1.12.15"
