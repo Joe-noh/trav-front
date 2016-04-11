@@ -1,0 +1,23 @@
+{
+  "name": "trav",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^1.12.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joe-noh/trav-front.git"
+  },
+  "author": "Joe-noh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joe-noh/trav-front/issues"
+  },
+  "homepage": "https://github.com/Joe-noh/trav-front#readme"
+}
