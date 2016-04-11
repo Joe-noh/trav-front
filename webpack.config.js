@@ -12,9 +12,17 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style!css!stylus?modules!postcss'
       }
     ]
   },
+
+  postcss: [
+    require('autoprefixer')
+  ],
 
   devServer: {
     contentBase: "./public",
