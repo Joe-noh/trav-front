@@ -1,7 +1,12 @@
-module.exports = function() {
-  var greet = document.createElement('div');
-  greet.textContent = "Hi there and greetings!";
+import React, {Component} from 'react';
 
-  return greet;
-};
+class Greeter extends Component {
+  render() {
+    return (
+      <div>Hi there and greetings!</div>
+    );
+  }
+}
+
+export default Greeter;
 
