@@ -8,6 +8,7 @@
     "webpack": "^1.12.15"
   },
   "scripts": {
+    "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
