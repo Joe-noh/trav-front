@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, hashHistory} from 'react-router';
 import Greeter from './Greeter.js';
 
 import './main.styl';
 
-ReactDOM.render(<Greeter />, document.getElementById('root'));
+let routes = (
+  <Router history={hashHistory}>
+    <Route path="/" component={Greeter}/>
+  </Router>
+);
+
+ReactDOM.render(routes, document.getElementById('root'));
 
