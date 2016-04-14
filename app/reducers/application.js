@@ -1,3 +1,4 @@
+import * as constants from '../constants';
 import createReducer from '../createReducer';
 
 const initialState = {
@@ -5,7 +6,8 @@ const initialState = {
 };
 
 const actionHandlers = {
-  LOG_OUT: () => ({token: null})
+  [constants.LOG_IN]: (_, action) => action.payload,
+  [constants.LOG_OUT]: () => ({token: null})
 };
 
 export default createReducer(initialState, actionHandlers);

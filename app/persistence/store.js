@@ -1,4 +1,4 @@
-// import * as constants from '../constants'
+import * as constants from '../constants'
 import * as storage from './storage'
 
 export default function persistenceHandler (next) {
@@ -9,11 +9,13 @@ export default function persistenceHandler (next) {
       dispatch (action) {
         store.dispatch(action);
 
-        /*
-        if (action.type === constants.LOGGED_IN) { storage.put('token', action.payload.token); }
+        if (action.type === constants.LOG_IN) {
+          storage.put('token', action.payload.token);
+        }
 
-        if (action.type === constants.LOG_OUT) { storage.remove('token'); }
-        */
+        if (action.type === constants.LOG_OUT) {
+          storage.remove('token');
+        }
 
         return action;
       }
