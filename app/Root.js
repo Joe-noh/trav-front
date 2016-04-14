@@ -6,7 +6,7 @@ import {ReduxRouter} from 'redux-router';
 
 import configureStore from './configureStore';
 
-import Greeter from './Greeter.js';
+import {Greeter} from './components';
 
 import './main.styl';
 
