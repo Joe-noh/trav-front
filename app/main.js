@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
-import Greeter from './Greeter.js';
+import {Provider} from 'react-redux';
+import {Route} from 'react-router';
 
-import './main.styl';
+import Root, {store} from './Root';
 
-let routes = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Greeter}/>
-  </Router>
+ReactDOM.render(
+  (
+    <Provider store={store}>
+      <Root />
+    </Provider>
+  ),
+  document.getElementById('root')
 );
-
-ReactDOM.render(routes, document.getElementById('root'));
 

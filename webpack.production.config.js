@@ -33,7 +33,12 @@ module.exports = {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin("[name]-[hash].css")
+    new ExtractTextPlugin("[name]-[hash].css"),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    })
   ]
 }
 
