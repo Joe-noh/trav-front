@@ -7,7 +7,7 @@ import {ReduxRouter} from 'redux-router';
 import configureStore from './configureStore';
 import * as storage from './persistence/storage';
 import * as constants from './constants';
-import {Greeter} from './components';
+import {Application, Greeter, Login} from './components';
 
 import './main.styl';
 
@@ -24,7 +24,7 @@ function requireAuth(nextState, replace) {
   let isLoggedIn = Boolean(state.application.token);
 
   if (!isLoggedIn) {
-    replace('/');
+    replace('/login');
   }
 }
 
@@ -35,9 +35,12 @@ function logout(nextState, replace) {
 
 let routes = (
   <ReduxRouter>
-    <Route path="/" component={Greeter} />
-    <Route path="a" component={Greeter} onEnter={requireAuth} />
-    <Route path="logout" onEnter={logout} />
+    <Route component={Application}>
+      <Route path="/" component={Greeter} />
+      <Route path="login" component={Login} />
+      <Route path="a" component={Greeter} onEnter={requireAuth} />
+      <Route path="logout" onEnter={logout} />
+    </Route>
   </ReduxRouter>
 );
 
