@@ -10,8 +10,17 @@ class Login extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    let {oauth_token, oauth_verifier} = this.props.location.query;
+
+    if (!!oauth_token && !!oauth_verifier) {
+      this.context.store.dispatch(actions.login(oauth_token, oauth_verifier)).then(() => {
+        this.props.history.push('/a');
+      });
+    }
+  }
+
   onClick() {
-    console.log("a");
     this.context.store.dispatch(actions.openTwitterLogin());
   }
 

@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const actionHandlers = {
-  [constants.LOG_IN]: (_, action) => action.payload,
+  [constants.LOG_IN]: (_, action) => ({token: action.payload.token}),
   [constants.LOG_OUT]: () => ({token: null})
 };
 
