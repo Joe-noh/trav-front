@@ -29,3 +29,7 @@ export function login(oauth_token, oauth_verifier) {
     });
   };
 };
+
+export function logout() {
+  return {type: constants.LOG_OUT};
+}

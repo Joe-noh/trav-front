@@ -7,6 +7,7 @@ import {ReduxRouter} from 'redux-router';
 import configureStore from './configureStore';
 import * as storage from './persistence/storage';
 import * as constants from './constants';
+import * as actions from './actions/application';
 import {Application, Greeter, Login} from './components';
 
 import './main.styl';
@@ -29,7 +30,7 @@ function requireAuth(nextState, replace) {
 }
 
 function logout(nextState, replace) {
-  store.dispatch({type: constants.LOG_OUT});
+  store.dispatch(actions.logout());
   replace('/');
 }
 
