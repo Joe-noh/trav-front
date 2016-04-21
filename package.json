@@ -4,6 +4,7 @@
   "description": "frontend app for trav-api",
   "dependencies": {
     "axios": "^0.9.1",
+    "jwt-decode": "^2.0.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.4",
