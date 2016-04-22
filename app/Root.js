@@ -36,18 +36,19 @@ function logout(nextState, replace) {
   replace('/');
 }
 
-let routes = (
-  <div>
-    <ReduxRouter>
-      <Route component={Application}>
-        <Route path="/" component={Login} />
-        <Route path="a" component={Greeter} onEnter={requireAuth} />
-        <Route path="logout" onEnter={logout} />
-      </Route>
-    </ReduxRouter>
-    <DevTools key="devtools" />
-  </div>
-);
+let routes = [
+  <ReduxRouter key="router">
+    <Route component={Application}>
+      <Route path="/" component={Login} />
+      <Route path="a" component={Greeter} onEnter={requireAuth} />
+      <Route path="logout" onEnter={logout} />
+    </Route>
+  </ReduxRouter>
+];
+
+if (__DEVTOOLS__) {
+  routes.push(<DevTools key="devtools" />);
+}
 
 class Root extends Component {
   static propTypes = {
@@ -55,7 +56,7 @@ class Root extends Component {
   };
 
   render() {
-    return routes;
+    return (<div>{routes}</div>);
   }
 }
 
