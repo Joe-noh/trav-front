@@ -12,6 +12,9 @@ const storeEnhancers = [
   reduxReactRouter({createHistory})
 ];
 
+const DevTools = require('./components/DevTools').default;
+storeEnhancers.push(DevTools.instrument());
+
 const finalCreateStore = compose(
   applyMiddleware(thunk),
   ...storeEnhancers

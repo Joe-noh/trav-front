@@ -18,6 +18,8 @@ let initialState = {
   }
 };
 
+const DevTools = require('./components/DevTools').default;
+
 export const store = configureStore(initialState);
 
 function requireAuth(nextState, replace) {
@@ -35,13 +37,16 @@ function logout(nextState, replace) {
 }
 
 let routes = (
-  <ReduxRouter>
-    <Route component={Application}>
-      <Route path="/" component={Login} />
-      <Route path="a" component={Greeter} onEnter={requireAuth} />
-      <Route path="logout" onEnter={logout} />
-    </Route>
-  </ReduxRouter>
+  <div>
+    <ReduxRouter>
+      <Route component={Application}>
+        <Route path="/" component={Login} />
+        <Route path="a" component={Greeter} onEnter={requireAuth} />
+        <Route path="logout" onEnter={logout} />
+      </Route>
+    </ReduxRouter>
+    <DevTools key="devtools" />
+  </div>
 );
 
 class Root extends Component {
