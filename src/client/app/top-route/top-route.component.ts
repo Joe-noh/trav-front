@@ -18,6 +18,7 @@ export class TopRouteComponent implements OnInit {
 
     if (token && verifier) {
       console.log("attempt login");
+      this.router.navigate(['TrTrips']);
     }
   }
 
