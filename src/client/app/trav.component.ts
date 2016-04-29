@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {TrTripsComponent} from './+tr-trips';
+import {TopRouteComponent} from './top-route';
 
 import {TrNavigationComponent} from './tr-navigation';
 
@@ -14,7 +15,8 @@ import {TrNavigationComponent} from './tr-navigation';
   pipes: []
 })
 @RouteConfig([
-  {path: '/trips', name: 'TrTrips', component: TrTripsComponent}
+  {path: '/',      name: 'TopRoute', component: TopRouteComponent, useAsDefault: true},
+  {path: '/trips', name: 'TrTrips',  component: TrTripsComponent}
 ])
 export class TravApp {
   defaultMeaning: number = 42;
