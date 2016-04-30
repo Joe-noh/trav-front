@@ -3,10 +3,11 @@ import {Http, Headers, RequestOptions} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {environment as env} from '../../environment';
 
+import {StorageService} from './storage.service';
+
 @Injectable()
 export class AuthService {
-
-  constructor(private http: Http) {}
+  constructor(private http: Http, private storage: StorageService) {}
 
   fetchSigninUrl() {
     return this.http.get(`${env.backendUrl}/api/auth/twitter`, this.defaultOptions()).map(res => res.json());
@@ -20,6 +21,14 @@ export class AuthService {
     });
 
     return this.http.post(url, params, this.defaultOptions()).map(res => res.json());
+  }
+
+  storeToken(token: string) {
+    this.storage.put("authToken", token);
+  }
+
+  getToken(): string {
+    return this.storage.get("authToken");
   }
 
   defaultOptions() {

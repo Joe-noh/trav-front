@@ -21,7 +21,7 @@ export class TopRouteComponent implements OnInit {
 
     if (token && verifier) {
       this.auth.fetchAuthToken(token, verifier).subscribe(data => {
-        localStorage.setItem('token', data.token);
+        this.auth.storeToken(data.token);
         this.router.navigate(['TrTrips']);
       });
     }
