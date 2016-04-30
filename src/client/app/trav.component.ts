@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 import {TripsRouteComponent} from './+trips-route';
 import {SigninComponent} from './signin';
 
-import {NavigationCompComponent} from './navigation-comp';
+import {NavigationComponent} from './shared';
 
 @Component({
   moduleId: __moduleName,
@@ -11,7 +11,7 @@ import {NavigationCompComponent} from './navigation-comp';
   providers: [ROUTER_PROVIDERS],
   templateUrl: 'trav.component.html',
   styleUrls: ['trav.component.css'],
-  directives: [ROUTER_DIRECTIVES, NavigationCompComponent],
+  directives: [ROUTER_DIRECTIVES, NavigationComponent],
   pipes: []
 })
 @RouteConfig([

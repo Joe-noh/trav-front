@@ -11,14 +11,14 @@ import {
   TestComponentBuilder
 } from 'angular2/testing';
 import {provide} from 'angular2/core';
-import {NavigationCompComponent} from './navigation-comp.component';
+import {NavigationComponent} from './navigation.component';
 
-describe('NavigationComp Component', () => {
+describe('Navigation Component', () => {
 
   beforeEachProviders((): any[] => []);
 
   it('should ...', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-    return tcb.createAsync(NavigationCompComponent).then((fixture: ComponentFixture) => {
+    return tcb.createAsync(NavigationComponent).then((fixture: ComponentFixture) => {
       fixture.detectChanges();
     });
   }));
