@@ -13,7 +13,10 @@ import {AuthService} from '../shared';
 })
 export class TopRouteComponent implements OnInit {
 
-  constructor(private params: RouteParams, private router: Router, private auth: AuthService) {}
+  constructor(
+    private params: RouteParams,
+    private router: Router,
+    private auth: AuthService) {}
 
   ngOnInit() {
     let token    = this.params.get("oauth_token");
