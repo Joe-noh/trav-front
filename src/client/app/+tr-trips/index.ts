@@ -1,1 +1,0 @@
-export {TrTripsComponent} from './tr-trips.component';

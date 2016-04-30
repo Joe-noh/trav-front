@@ -1,8 +1,8 @@
 const barrels: string[] = [
   'app',
   'app/shared',
-  'app/tr-navigation',
-  'app/+tr-trips',
+  'app/navigation-comp',
+  'app/+trips-route',
   'app/top-route',
   /** @cli-barrel */
 ];
