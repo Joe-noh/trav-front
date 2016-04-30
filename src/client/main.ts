@@ -1,4 +1,5 @@
 import {bootstrap} from 'angular2/platform/browser';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {enableProdMode} from 'angular2/core';
 import {environment} from './app/environment';
 import {TravApp} from './app/trav.component';
@@ -7,4 +8,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(TravApp);
+bootstrap(TravApp, [HTTP_PROVIDERS]);
