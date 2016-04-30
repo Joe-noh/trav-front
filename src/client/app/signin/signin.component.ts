@@ -26,7 +26,7 @@ export class SigninComponent implements OnInit {
     if (token && verifier) {
       this.auth.fetchAuthToken(token, verifier).subscribe(data => {
         this.auth.storeToken(data.token);
-        this.router.navigate(['TripsRoute']);
+        this.router.navigate(['Trips']);
       });
     }
   }
