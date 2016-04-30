@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {TripsRouteComponent} from './+trips-route';
-import {SigninRouteComponent} from './signin-route';
+import {SigninComponent} from './signin';
 
 import {NavigationCompComponent} from './navigation-comp';
 
@@ -15,7 +15,7 @@ import {NavigationCompComponent} from './navigation-comp';
   pipes: []
 })
 @RouteConfig([
-  {path: '/signin', name: 'SigninRoute',   component: SigninRouteComponent, useAsDefault: true},
+  {path: '/signin', name: 'Signin',   component: SigninComponent, useAsDefault: true},
   {path: '/trips',  name: 'TripsRoute', component: TripsRouteComponent}
 ])
 export class TravApp {

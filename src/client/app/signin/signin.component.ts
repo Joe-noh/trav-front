@@ -5,13 +5,13 @@ import {AuthService} from '../shared';
 
 @Component({
   moduleId: __moduleName,
-  selector: 'signin-route',
-  templateUrl: 'signin-route.component.html',
-  styleUrls: ['signin-route.component.css'],
+  selector: 'signin',
+  templateUrl: 'signin.component.html',
+  styleUrls: ['signin.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [AuthService]
 })
-export class SigninRouteComponent implements OnInit {
+export class SigninComponent implements OnInit {
 
   constructor(
     private params: RouteParams,
