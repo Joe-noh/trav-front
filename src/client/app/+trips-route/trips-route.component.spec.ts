@@ -12,7 +12,7 @@ import {
 } from 'angular2/testing';
 import {provide} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
-import {TrTripsComponent} from './tr-trips.component';
+import {TripsRouteComponent} from './trips-route.component';
 class MockRouter {
   registerPrimaryOutlet() { }
 }
@@ -21,7 +21,7 @@ class MockRouteParams {
   get() { return 1; }
 }
 
-describe('TrTrips Component', () => {
+describe('TripsRoute Component', () => {
 
   beforeEachProviders(() => [
     provide(Router, { useClass: MockRouter }),
@@ -29,7 +29,7 @@ describe('TrTrips Component', () => {
   ]);
 
   it('should ...', injectAsync([TestComponentBuilder], (tcb:TestComponentBuilder) => {
-    return tcb.createAsync(TrTripsComponent).then((fixture: ComponentFixture) => {
+    return tcb.createAsync(TripsRouteComponent).then((fixture: ComponentFixture) => {
       fixture.detectChanges();
     });
   }));
