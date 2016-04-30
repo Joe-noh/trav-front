@@ -3,12 +3,12 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
   moduleId: __moduleName,
-  selector: 'tr-navigation',
-  templateUrl: 'tr-navigation.component.html',
-  styleUrls: ['tr-navigation.component.css'],
+  selector: 'navigation-comp',
+  templateUrl: 'navigation-comp.component.html',
+  styleUrls: ['navigation-comp.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
-export class TrNavigationComponent implements OnInit {
+export class NavigationCompComponent implements OnInit {
 
   constructor() {}
 

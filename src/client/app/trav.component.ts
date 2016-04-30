@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 import {TripsRouteComponent} from './+trips-route';
 import {TopRouteComponent} from './top-route';
 
-import {TrNavigationComponent} from './tr-navigation';
+import {NavigationCompComponent} from './navigation-comp';
 
 @Component({
   moduleId: __moduleName,
@@ -11,7 +11,7 @@ import {TrNavigationComponent} from './tr-navigation';
   providers: [ROUTER_PROVIDERS],
   templateUrl: 'trav.component.html',
   styleUrls: ['trav.component.css'],
-  directives: [ROUTER_DIRECTIVES, TrNavigationComponent],
+  directives: [ROUTER_DIRECTIVES, NavigationCompComponent],
   pipes: []
 })
 @RouteConfig([
