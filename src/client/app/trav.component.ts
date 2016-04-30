@@ -15,8 +15,8 @@ import {NavigationComponent} from './shared';
   pipes: []
 })
 @RouteConfig([
-  {path: '/signin', name: 'Signin',   component: SigninComponent, useAsDefault: true},
-  {path: '/trips',  name: 'TripsRoute', component: TripsRouteComponent}
+  {path: '/',       name: 'TripsRoute', component: TripsRouteComponent, useAsDefault: true},
+  {path: '/signin', name: 'Signin',     component: SigninComponent},
 ])
 export class TravApp {
   defaultMeaning: number = 42;
