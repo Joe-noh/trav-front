@@ -5,13 +5,13 @@ import {AuthService} from '../shared';
 
 @Component({
   moduleId: __moduleName,
-  selector: 'top-route',
-  templateUrl: 'top-route.component.html',
-  styleUrls: ['top-route.component.css'],
+  selector: 'signin',
+  templateUrl: 'signin.component.html',
+  styleUrls: ['signin.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [AuthService]
 })
-export class TopRouteComponent implements OnInit {
+export class SigninComponent implements OnInit {
 
   constructor(
     private params: RouteParams,
@@ -26,7 +26,7 @@ export class TopRouteComponent implements OnInit {
     if (token && verifier) {
       this.auth.fetchAuthToken(token, verifier).subscribe(data => {
         this.auth.storeToken(data.token);
-        this.router.navigate(['TripsRoute']);
+        this.router.navigate(['Trips']);
       });
     }
   }
