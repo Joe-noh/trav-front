@@ -1,1 +1,0 @@
-export {TopRouteComponent} from './top-route.component';

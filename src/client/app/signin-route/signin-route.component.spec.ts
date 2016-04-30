@@ -12,7 +12,7 @@ import {
 } from 'angular2/testing';
 import {provide} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
-import {TopRouteComponent} from './top-route.component';
+import {SigninRouteComponent} from './signin-route.component';
 class MockRouter {
   registerPrimaryOutlet() { }
 }
@@ -21,7 +21,7 @@ class MockRouteParams {
   get() { return 1; }
 }
 
-describe('TopRoute Component', () => {
+describe('SigninRoute Component', () => {
 
   beforeEachProviders(() => [
     provide(Router, { useClass: MockRouter }),
@@ -29,7 +29,7 @@ describe('TopRoute Component', () => {
   ]);
 
   it('should ...', injectAsync([TestComponentBuilder], (tcb:TestComponentBuilder) => {
-    return tcb.createAsync(TopRouteComponent).then((fixture: ComponentFixture) => {
+    return tcb.createAsync(SigninRouteComponent).then((fixture: ComponentFixture) => {
       fixture.detectChanges();
     });
   }));
