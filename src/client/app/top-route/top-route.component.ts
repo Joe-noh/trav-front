@@ -16,7 +16,8 @@ export class TopRouteComponent implements OnInit {
   constructor(
     private params: RouteParams,
     private router: Router,
-    private auth: AuthService) {}
+    private auth: AuthService,
+    private window: Window) {}
 
   ngOnInit() {
     let token    = this.params.get("oauth_token");
@@ -32,7 +33,7 @@ export class TopRouteComponent implements OnInit {
 
   signInWithTwitter() {
     this.auth.fetchSigninUrl().subscribe(data => {
-      window.location.href = data.url;
+      this.window.location.href = data.url;
     })
   }
 }

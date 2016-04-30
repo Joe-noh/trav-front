@@ -1,6 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {enableProdMode} from 'angular2/core';
+import {enableProdMode, provide} from 'angular2/core';
 import {environment} from './app/environment';
 
 import {StorageService} from './app/shared'
@@ -11,4 +11,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(TravApp, [HTTP_PROVIDERS, StorageService]);
+bootstrap(TravApp, [
+  HTTP_PROVIDERS,
+  StorageService,
+  provide(Window, {useValue: window})
+]);

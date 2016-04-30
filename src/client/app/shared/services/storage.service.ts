@@ -2,11 +2,14 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 export class StorageService {
+
+  constructor(private window: Window) {}
+
   put(key: string, value: any) {
-    window.localStorage.setItem(key, value);
+    this.window.localStorage.setItem(key, value);
   }
 
   get(key): any {
-    return window.localStorage.getItem(key);
+    return this.window.localStorage.getItem(key);
   }
 }
