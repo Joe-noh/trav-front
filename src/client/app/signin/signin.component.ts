@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   constructor(
     private params: RouteParams,
     private router: Router,
-    private auth: AuthService,
+    private authService: AuthService,
     private window: Window) {}
 
   ngOnInit() {
@@ -24,15 +24,20 @@ export class SigninComponent implements OnInit {
     let verifier = this.params.get("oauth_verifier");
 
     if (token && verifier) {
-      this.auth.fetchAuthToken(token, verifier).subscribe(data => {
-        this.auth.storeToken(data.token);
+      this.authService.fetchAuthToken(token, verifier).subscribe(data => {
+        this.authService.storeToken(data.token);
         this.router.navigate(['Trips']);
       });
+      return
+    }
+
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['Trips']);
     }
   }
 
   signInWithTwitter() {
-    this.auth.fetchSigninUrl().subscribe(data => {
+    this.authService.fetchSigninUrl().subscribe(data => {
       this.window.location.href = data.url;
     })
   }

@@ -31,6 +31,10 @@ export class AuthService {
     return this.storage.get("authToken");
   }
 
+  isLoggedIn(): boolean {
+    return this.getToken() !== null;
+  }
+
   defaultOptions() {
     return new RequestOptions({
       headers: new Headers({
