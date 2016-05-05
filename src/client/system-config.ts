@@ -1,9 +1,13 @@
 const barrels: string[] = [
   'app',
-  'app/shared',
-  'app/+trips',
-  'app/signin',
-  /** @cli-barrel */
+  'app/directives/auth-router-outlet',
+  'app/services/api',
+  'app/services/auth',
+  'app/services/storage',
+  'app/components/main',
+  'app/components/navigation',
+  'app/components/signin',
+  'app/components/trips'
 ];
 
 function createPackageConfig(barrelList: string[]): any {

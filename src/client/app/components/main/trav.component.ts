@@ -1,9 +1,11 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {TripsComponent} from './+trips';
-import {SigninComponent} from './signin';
 
-import {NavigationComponent, AuthRouterOutlet} from './shared';
+import {NavigationComponent} from '../navigation';
+import {SigninComponent} from '../signin';
+import {TripsComponent} from '../trips';
+
+import {AuthRouterOutlet} from '../../directives/auth-router-outlet';
 
 @Component({
   moduleId: __moduleName,

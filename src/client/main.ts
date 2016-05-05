@@ -3,9 +3,10 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {enableProdMode, provide} from 'angular2/core';
 import {environment} from './app/environment';
 
-import {StorageService, AuthService} from './app/shared'
+import {StorageService} from './app/services/storage';
+import {AuthService} from './app/services/auth';
 
-import {TravApp} from './app/trav.component';
+import {TravApp} from './app/components/main';
 
 if (environment.production) {
   enableProdMode();
