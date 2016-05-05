@@ -7,7 +7,8 @@ const barrels: string[] = [
   'app/components/main',
   'app/components/navigation',
   'app/components/signin',
-  'app/components/trips'
+  'app/components/trips',
+  'app/components/trip-detail'
 ];
 
 function createPackageConfig(barrelList: string[]): any {

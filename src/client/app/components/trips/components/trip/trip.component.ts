@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Attribute} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {Trip} from '../trip';
+import {Trip} from '../../../../lib/trip';
 
 @Component({
   moduleId: __moduleName,
