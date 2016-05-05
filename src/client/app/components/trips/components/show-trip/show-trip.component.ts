@@ -5,14 +5,13 @@ import {Trip} from '../trip';
 
 @Component({
   moduleId: __moduleName,
-  selector: 'trip',
+  selector: 'show-trip',
   inputs: ['trip'],
-  templateUrl: 'trip.component.html',
-  styleUrls: ['trip.component.css'],
+  templateUrl: 'show-trip.component.html',
+  styleUrls: ['show-trip.component.css'],
   directives: [ROUTER_DIRECTIVES],
 })
-export class TripComponent implements OnInit {
-  private path;
+export class ShowTripComponent implements OnInit {
   @Input() trip: Trip;
 
   constructor() {}
