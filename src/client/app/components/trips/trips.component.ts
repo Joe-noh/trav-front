@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 import {ApiService} from '../../services/api';
+import {TripService} from '../../services/trip';
 import {TripComponent} from './components/trip/trip.component';
 
 @Component({
@@ -10,17 +11,15 @@ import {TripComponent} from './components/trip/trip.component';
   templateUrl: 'trips.component.html',
   styleUrls: ['trips.component.css'],
   directives: [ROUTER_DIRECTIVES, TripComponent],
-  providers: [ApiService]
+  providers: [TripService]
 })
 export class TripsComponent implements OnInit {
   private trips;
 
-  constructor(private api: ApiService) {}
+  constructor(private tripService: TripService) {}
 
   ngOnInit() {
-    this.api.getRequest('/api/trips').subscribe(data => {
-      this.trips = data.trips;
-    });
+    this.tripService.trips.subscribe(trips => this.trips = trips);
+    this.tripService.index();
   }
-
 }

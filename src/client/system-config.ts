@@ -4,6 +4,7 @@ const barrels: string[] = [
   'app/services/api',
   'app/services/auth',
   'app/services/storage',
+  'app/services/trip',
   'app/components/main',
   'app/components/navigation',
   'app/components/signin',

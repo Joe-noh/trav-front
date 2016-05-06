@@ -5,6 +5,7 @@ import {environment} from './app/environment';
 
 import {StorageService} from './app/services/storage';
 import {AuthService} from './app/services/auth';
+import {ApiService} from './app/services/api';
 
 import {TravApp} from './app/components/main';
 
@@ -16,5 +17,6 @@ bootstrap(TravApp, [
   HTTP_PROVIDERS,
   StorageService,
   AuthService,
+  ApiService,
   provide(Window, {useValue: window})
 ]);

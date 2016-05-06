@@ -1,21 +1,29 @@
-import {Component, OnInit, Input, Attribute} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 
+import {TripService} from '../../services/trip';
 import {Trip} from '../../lib/trip';
 
 @Component({
   moduleId: __moduleName,
-  selector: 'show-trip',
-  inputs: ['trip'],
+  selector: 'trip-detail',
   templateUrl: 'trip-detail.component.html',
   styleUrls: ['trip-detail.component.css'],
   directives: [ROUTER_DIRECTIVES],
+  providers: [TripService]
 })
 export class TripDetailComponent implements OnInit {
-  @Input() trip: Trip;
+  private trip;
+  private tripId: number;
 
-  constructor() {}
+  constructor(private params: RouteParams, private tripService: TripService) {
+    this.tripId = parseInt(this.params.get('id'));
+  }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.tripService.trips.subscribe(trips => {
+      this.trip = trips.find(trip => trip.id === this.tripId);
+    });
+    this.tripService.load(this.tripId);
+  }
 }
