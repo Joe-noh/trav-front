@@ -20,13 +20,17 @@ export class TripService {
   }
 
   index() {
-    this.api.getRequest('/api/trips').subscribe(
-      data => {
-        this.store.trips = data.trips;
-        this.tripsObserver.next(this.store.trips);
-      },
-      error => console.log('Could not load trips')
-    )
+    if (this.store.trips.length > 0) {
+      this.tripsObserver.next(this.store.trips);
+    } else {
+      this.api.getRequest('/api/trips').subscribe(
+        data => {
+          this.store.trips = data.trips;
+          this.tripsObserver.next(this.store.trips);
+        },
+        error => console.log('Could not load trips')
+      );
+    }
   }
 
   load(id: number) {
