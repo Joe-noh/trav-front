@@ -1,3 +1,8 @@
+/// <reference path="../../node_modules/@angular/common/index.d.ts" />
+/// <reference path="../../node_modules/@angular/compiler/index.d.ts" />
+/// <reference path="../../node_modules/@angular/core/index.d.ts" />
+/// <reference path="../../node_modules/@angular/platform-browser-dynamic/index.d.ts" />
+
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {enableProdMode, provide} from 'angular2/core';
