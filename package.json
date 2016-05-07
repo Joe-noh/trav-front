@@ -23,11 +23,9 @@
   "private": true,
   "dependencies": {
     "angular2": "2.0.0-beta.17",
-    "es6-shim": "^0.35.0",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.6",
-    "systemjs": "0.19.20",
-    "zone.js": "^0.6.11"
+    "core-js": "^2.3.0",
+    "rxjs": "^5.0.0-beta.6",
+    "zone.js": "^0.6.12"
   },
   "devDependencies": {
     "angular-cli": "0.0.*",
@@ -43,6 +41,7 @@
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
     "protractor": "^3.0.0",
+    "source-map-loader": "^0.1.5",
     "ts-node": "^0.5.5",
     "tslint": "^3.6.0",
     "typescript": "^1.8.7",
