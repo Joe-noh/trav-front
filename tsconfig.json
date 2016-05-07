@@ -1,22 +1,28 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "declaration": false,
+    "target": "es5",
+    "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "",
-    "module": "system",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "noImplicitAny": false,
-    "outDir": "../dist/",
-    "rootDir": ".",
     "sourceMap": true,
-    "target": "es5"
+    "noEmitHelpers": true
   },
-
-  "files": [
-    "src/client/main.ts",
-    "typings.d.ts"
-  ]
+  "exclude": [
+    "node_modules",
+    "typings/main.d.ts",
+    "typings/main"
+  ],
+  "filesGlob": [
+    "./src/**/*.ts",
+    "!./node_modules/**/*.ts",
+    "typings/browser.d.ts"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "resolveGlobs": true,
+    "forkChecker": true
+  },
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

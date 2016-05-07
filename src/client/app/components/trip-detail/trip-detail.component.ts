@@ -6,10 +6,9 @@ import {TripService} from '../../services/trip';
 import {Trip} from '../../lib/trip';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'trip-detail',
-  templateUrl: 'trip-detail.component.html',
-  styleUrls: ['trip-detail.component.css'],
+  templateUrl: 'app/components/trip-detail/trip-detail.component.html',
+  styleUrls: ['app/components/trip-detail/trip-detail.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 export class TripDetailComponent implements OnInit, OnDestroy {

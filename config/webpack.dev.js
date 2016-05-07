@@ -1,8 +1,8 @@
 'use strict';
 
 let helpers = require('./helpers');
-let webpackMerge = require('webpack-merge'); // used to merge webpack configs
-let commonConfig = require('./webpack.common'); // the settings that are common to prod and dev
+let webpackMerge = require('webpack-merge');
+let commonConfig = require('./webpack.common');
 
 let DefinePlugin = require('webpack/lib/DefinePlugin');
 

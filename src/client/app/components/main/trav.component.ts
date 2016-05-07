@@ -9,11 +9,10 @@ import {TripDetailComponent} from '../trip-detail';
 import {AuthRouterOutlet} from '../../directives/auth-router-outlet';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'trav-app',
   providers: [ROUTER_PROVIDERS],
-  templateUrl: 'trav.component.html',
-  styleUrls: ['trav.component.css'],
+  templateUrl: 'app/components/main/trav.component.html',
+  styleUrls: ['app/components/main/trav.component.css'],
   directives: [NavigationComponent, AuthRouterOutlet],
   pipes: []
 })

@@ -4,10 +4,9 @@ import {RouteConfig, RouteParams, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} f
 import {AuthService} from '../../services/auth';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'signin',
-  templateUrl: 'signin.component.html',
-  styleUrls: ['signin.component.css'],
+  templateUrl: 'app/components/signin/signin.component.html',
+  styleUrls: ['app/components/signin/signin.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [AuthService]
 })

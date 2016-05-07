@@ -7,10 +7,9 @@ import {TripService} from '../../services/trip';
 import {TripComponent} from './components/trip/trip.component';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'trips',
-  templateUrl: 'trips.component.html',
-  styleUrls: ['trips.component.css'],
+  templateUrl: 'app/components/trips/trips.component.html',
+  styleUrls: ['app/components/trips/trips.component.css'],
   directives: [ROUTER_DIRECTIVES, TripComponent]
 })
 export class TripsComponent implements OnInit {
