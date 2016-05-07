@@ -3,9 +3,9 @@
 /// <reference path="../../node_modules/@angular/core/index.d.ts" />
 /// <reference path="../../node_modules/@angular/platform-browser-dynamic/index.d.ts" />
 
-import {bootstrap} from 'angular2/platform/browser';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {enableProdMode, provide} from 'angular2/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {enableProdMode, provide} from '@angular/core';
 import {environment} from './app/environment';
 
 import {StorageService} from './app/services/storage';

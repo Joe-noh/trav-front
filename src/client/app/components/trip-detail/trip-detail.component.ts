@@ -1,5 +1,5 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {ROUTER_DIRECTIVES, RouteParams} from '@angular/router-deprecated';
 import {Subscription} from 'rxjs/Subscription';
 
 import {TripService} from '../../services/trip';
