@@ -1,14 +1,9 @@
-'use strict';
-
-let nodeEnv = process.env.NODE_ENV;
-let env;
+const nodeEnv = process.env.NODE_ENV;
 
 if (/prod/.test(nodeEnv)) {
-  env = 'prod';
+  module.exports = require('./config/webpack.prod');
 } else if (/test/.test(nodeEnv)) {
-  env = 'test';
+  module.exports = require('./config/webpack.test');
 } else {
-  env = 'dev';
+  module.exports = require('./config/webpack.dev');
 }
-
-module.exports = require(`./config/webpack.${env}`);

@@ -6,13 +6,13 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {enableProdMode, provide} from '@angular/core';
-import {environment} from './app/environment';
+import env from './app/environment';
 
 import {StorageService, AuthService, ApiService, TripService} from './app/services';
 
 import {TravApp} from './app/trav.component';
 
-if (environment.production) {
+if (env.production) {
   enableProdMode();
 }
 

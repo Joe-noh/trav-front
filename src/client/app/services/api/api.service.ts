@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
-import {environment as env} from '../../environment';
 
+import env from '../../environment';
 import {AuthService} from '../auth/auth.service';
 
 @Injectable()

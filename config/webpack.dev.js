@@ -1,10 +1,8 @@
-'use strict';
+const helpers = require('./helpers');
+const webpackMerge = require('webpack-merge');
+const commonConfig = require('./webpack.common');
 
-let helpers = require('./helpers');
-let webpackMerge = require('webpack-merge');
-let commonConfig = require('./webpack.common');
-
-let DefinePlugin = require('webpack/lib/DefinePlugin');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 
 const ENV = process.env.ENV = process.env.NODE_ENV = 'dev';
 const HMR = helpers.hasProcessFlag('hot');
@@ -12,7 +10,9 @@ const metadata = webpackMerge(commonConfig.metadata, {
   host: 'localhost',
   port: 4200,
   ENV: ENV,
-  HMR: HMR
+  HMR: HMR,
+
+  backendUrl: 'http://localhost:4000'
 });
 
 module.exports = webpackMerge(commonConfig, {
@@ -34,6 +34,7 @@ module.exports = webpackMerge(commonConfig, {
         'ENV': JSON.stringify(metadata.ENV),
         'NODE_ENV': JSON.stringify(metadata.ENV),
         'HMR': metadata.HMR,
+        backendUrl: 'aaa'
       }
     })
   ],

@@ -1,7 +1,5 @@
-'use strict';
-
-let path = require('path');
-let root = path.resolve(__dirname, '..');
+const path = require('path');
+const root = path.resolve(__dirname, '..');
 
 module.exports = {
   root: (filepath) => {
@@ -14,8 +12,8 @@ module.exports = {
 
   packageSort: (packages) => {
     return (a, b) => {
-      let nameA = a.names[0];
-      let nameB = b.names[0];
+      const nameA = a.names[0];
+      const nameB = b.names[0];
 
       if (nameA === 'polyfills') { return -1; }
       if (nameA === 'main') { return 1;}

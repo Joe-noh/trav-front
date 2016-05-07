@@ -15,6 +15,7 @@
   ],
   "filesGlob": [
     "./src/**/*.ts",
+    "./src/client/custom-typings.d.ts",
     "!./node_modules/**/*.ts",
     "typings/browser.d.ts"
   ],
