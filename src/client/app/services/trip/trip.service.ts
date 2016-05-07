@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/observer';
 import 'rxjs/add/operator/share';
 
-import {ApiService} from '../api';
+import {ApiService} from '../api/api.service';
 import {Trip} from '../../lib/trip';
 
 @Injectable()

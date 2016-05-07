@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouteConfig, RouteParams, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
-import {AuthService} from '../../services/auth';
+import {AuthService} from '../../services';
 
 @Component({
   selector: 'signin',

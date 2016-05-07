@@ -8,10 +8,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import {enableProdMode, provide} from '@angular/core';
 import {environment} from './app/environment';
 
-import {StorageService} from './app/services/storage';
-import {AuthService} from './app/services/auth';
-import {ApiService} from './app/services/api';
-import {TripService} from './app/services/trip';
+import {StorageService, AuthService, ApiService, TripService} from './app/services';
 
 import {TravApp} from './app/components/main';
 

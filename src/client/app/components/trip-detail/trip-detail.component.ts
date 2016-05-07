@@ -2,7 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ROUTER_DIRECTIVES, RouteParams} from '@angular/router-deprecated';
 import {Subscription} from 'rxjs/Subscription';
 
-import {TripService} from '../../services/trip';
+import {TripService} from '../../services';
 import {Trip} from '../../lib/trip';
 
 @Component({

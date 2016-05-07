@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {Subscription} from 'rxjs/Subscription';
 
-import {ApiService} from '../../services/api';
-import {TripService} from '../../services/trip';
+import {ApiService, TripService} from '../../services';
 import {TripComponent} from '../trip/trip.component';
 
 @Component({

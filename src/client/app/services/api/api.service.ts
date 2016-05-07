@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 import {environment as env} from '../../environment';
 
-import {AuthService} from '../auth';
+import {AuthService} from '../auth/auth.service';
 
 @Injectable()
 export class ApiService {
