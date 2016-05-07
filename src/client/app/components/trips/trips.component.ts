@@ -4,7 +4,7 @@ import {Subscription} from 'rxjs/Subscription';
 
 import {ApiService} from '../../services/api';
 import {TripService} from '../../services/trip';
-import {TripComponent} from './components/trip/trip.component';
+import {TripComponent} from '../trip/trip.component';
 
 @Component({
   selector: 'trips',
