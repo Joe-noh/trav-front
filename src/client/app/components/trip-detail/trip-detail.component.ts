@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from '@angular/router-deprecated';
 import {Subscription} from 'rxjs/Subscription';
 
 import {TripService} from '../../services';
-import {Trip} from '../../lib/trip';
+import {Trip} from '../../interfaces';
 
 @Component({
   selector: 'trip-detail',
