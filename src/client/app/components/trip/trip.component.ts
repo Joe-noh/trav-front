@@ -4,7 +4,6 @@ import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {Trip} from '../../lib/trip';
 
 @Component({
-
   selector: 'trip',
   inputs: ['trip'],
   templateUrl: 'app/components/trip/trip.component.html',

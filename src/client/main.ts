@@ -10,7 +10,7 @@ import {environment} from './app/environment';
 
 import {StorageService, AuthService, ApiService, TripService} from './app/services';
 
-import {TravApp} from './app/components/main';
+import {TravApp} from './app/trav.component';
 
 if (environment.production) {
   enableProdMode();
