@@ -1,5 +1,5 @@
 import {describe, it, expect, beforeEachProviders, inject} from 'angular2/testing';
-import {TravApp} from '../app/trav.component';
+import {TravApp} from './trav.component';
 
 beforeEachProviders(() => [TravApp]);
 
@@ -15,4 +15,3 @@ describe('App: Trav', () => {
     }));
   });
 });
-

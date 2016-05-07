@@ -3,9 +3,12 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {enableProdMode, provide} from 'angular2/core';
 import {environment} from './app/environment';
 
-import {StorageService} from './app/shared'
+import {StorageService} from './app/services/storage';
+import {AuthService} from './app/services/auth';
+import {ApiService} from './app/services/api';
+import {TripService} from './app/services/trip';
 
-import {TravApp} from './app/trav.component';
+import {TravApp} from './app/components/main';
 
 if (environment.production) {
   enableProdMode();
@@ -14,5 +17,8 @@ if (environment.production) {
 bootstrap(TravApp, [
   HTTP_PROVIDERS,
   StorageService,
+  AuthService,
+  ApiService,
+  TripService,
   provide(Window, {useValue: window})
 ]);

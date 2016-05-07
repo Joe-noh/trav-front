@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {environment as env} from '../../environment';
 
-import {StorageService} from './storage.service';
+import {StorageService} from '../storage';
 
 @Injectable()
 export class AuthService {

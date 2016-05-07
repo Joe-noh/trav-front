@@ -8,8 +8,8 @@ import {
 } from 'angular2/testing';
 
 import {provide} from 'angular2/core';
-import {AuthService} from './auth.service';
-import {StorageService} from './storage.service';
+import {AuthService} from '../auth';
+import {StorageService} from '../storage';
 import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Rx';
 
