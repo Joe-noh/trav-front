@@ -10,9 +10,7 @@ const metadata = webpackMerge(commonConfig.metadata, {
   host: 'localhost',
   port: 4200,
   ENV: ENV,
-  HMR: HMR,
-
-  backendUrl: 'http://localhost:4000'
+  HMR: HMR
 });
 
 module.exports = webpackMerge(commonConfig, {
@@ -33,8 +31,7 @@ module.exports = webpackMerge(commonConfig, {
       'process.env': {
         'ENV': JSON.stringify(metadata.ENV),
         'NODE_ENV': JSON.stringify(metadata.ENV),
-        'HMR': metadata.HMR,
-        backendUrl: 'aaa'
+        'HMR': metadata.HMR
       }
     })
   ],

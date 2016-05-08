@@ -14,12 +14,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "npm run server:dev",
-    "server:dev": "webpack-dev-server --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/client/",
-    "postinstall": "typings install",
-    "lint": "tslint \"src/**/*.ts\"",
-    "format": "clang-format -i -style=file --glob=src/**/*.ts",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "server:dev": "NODE_ENV=dev webpack-dev-server --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/client/"
   },
   "private": true,
   "dependencies": {

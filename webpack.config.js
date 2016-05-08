@@ -1,8 +1,8 @@
-const nodeEnv = process.env.NODE_ENV;
+const env = process.env.NODE_ENV;
 
-if (/prod/.test(nodeEnv)) {
+if (/prod/.test(env)) {
   module.exports = require('./config/webpack.prod');
-} else if (/test/.test(nodeEnv)) {
+} else if (/test/.test(env)) {
   module.exports = require('./config/webpack.test');
 } else {
   module.exports = require('./config/webpack.dev');
