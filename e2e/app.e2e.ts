@@ -9,6 +9,6 @@ describe('trav App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('trav Works!');
+    expect(page.getParagraphText()).toEqual('Signin with Twitter');
   });
 });
