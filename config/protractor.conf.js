@@ -1,11 +1,12 @@
 require('ts-node/register');
+
 var helpers = require('./helpers');
+var SpecReporter = require('jasmine-spec-reporter');
 
 exports.config = {
   baseUrl: 'http://localhost:4200/',
 
   specs: [
-    helpers.root('e2e/**/**.e2e.ts'),
     helpers.root('e2e/**/*.e2e.ts')
   ],
   exclude: [],
@@ -31,6 +32,7 @@ exports.config = {
   },
 
   onPrepare: function() {
+    jasmine.getEnv().addReporter(new SpecReporter());
   },
 
   useAllAngular2AppRoots: true

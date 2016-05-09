@@ -1,4 +1,4 @@
-import { TravPage } from './app.po';
+import {TravPage} from './app.po';
 
 describe('trav App', function() {
   let page: TravPage;
@@ -7,7 +7,7 @@ describe('trav App', function() {
     page = new TravPage();
   })
 
-  it('should display message saying app works', () => {
+  it('shows "Signin with Twitter"', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('Signin with Twitter');
   });
