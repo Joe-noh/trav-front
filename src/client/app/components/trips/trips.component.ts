@@ -1,16 +1,14 @@
-import {Component, OnInit} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {Subscription} from 'rxjs/Subscription';
 
-import {ApiService} from '../../services/api';
-import {TripService} from '../../services/trip';
-import {TripComponent} from './components/trip/trip.component';
+import {ApiService, TripService} from '../../services';
+import {TripComponent} from '../trip/trip.component';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'trips',
-  templateUrl: 'trips.component.html',
-  styleUrls: ['trips.component.css'],
+  templateUrl: 'app/components/trips/trips.component.html',
+  styleUrls: ['app/components/trips/trips.component.css'],
   directives: [ROUTER_DIRECTIVES, TripComponent]
 })
 export class TripsComponent implements OnInit {

@@ -5,12 +5,11 @@ import {
   describe,
   expect,
   inject,
-} from 'angular2/testing';
+} from '@angular/core/testing';
 
-import {provide} from 'angular2/core';
-import {AuthService} from '../auth';
-import {StorageService} from '../storage';
-import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from 'angular2/http';
+import {provide} from '@angular/core';
+import {AuthService, StorageService} from '../../services';
+import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 
 let service, http;
@@ -19,7 +18,7 @@ class MockStorage {
   get(key) { return 'token'; }
 }
 
-describe('Auth Service', () => {
+describe('AuthService', () => {
 
   beforeEachProviders(() => [
     AuthService,

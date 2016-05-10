@@ -1,15 +1,14 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {ROUTER_DIRECTIVES, RouteParams} from '@angular/router-deprecated';
 import {Subscription} from 'rxjs/Subscription';
 
-import {TripService} from '../../services/trip';
-import {Trip} from '../../lib/trip';
+import {TripService} from '../../services';
+import {Trip} from '../../interfaces';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'trip-detail',
-  templateUrl: 'trip-detail.component.html',
-  styleUrls: ['trip-detail.component.css'],
+  templateUrl: 'app/components/trip-detail/trip-detail.component.html',
+  styleUrls: ['app/components/trip-detail/trip-detail.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 export class TripDetailComponent implements OnInit, OnDestroy {

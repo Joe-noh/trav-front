@@ -1,7 +1,15 @@
-// The file for the current environment will overwrite this one during build
-// Different environments can be found in config/environment.{dev|prod}.ts
-// The build system defaults to the dev environment
+let env;
 
-export const environment = {
-  production: false
-};
+if (/prod/.test(ENV)) {
+  env = {
+    production: true,
+    backendUrl: 'http://example.com'
+  };
+} else {
+  env = {
+    production: false,
+    backendUrl: 'http://localhost:4000'
+  };
+}
+
+export default env;

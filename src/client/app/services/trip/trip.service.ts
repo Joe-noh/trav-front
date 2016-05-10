@@ -1,10 +1,10 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/observer';
 import 'rxjs/add/operator/share';
 
-import {ApiService} from '../api';
-import {Trip} from '../../lib/trip';
+import {ApiService} from '../api/api.service';
+import {Trip} from '../../interfaces';
 
 @Injectable()
 export class TripService {
