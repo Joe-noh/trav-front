@@ -15,6 +15,7 @@ export class TripDetailComponent implements OnInit, OnDestroy {
   private trip;
   private tripId: number;
   private subscription: Subscription
+  private editing = false;
 
   constructor(private params: RouteParams, private tripService: TripService) {
     this.tripId = parseInt(this.params.get('id'));
@@ -29,5 +30,13 @@ export class TripDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  startEditing() {
+    this.editing = true;
+  }
+
+  save() {
+    this.editing = false;
   }
 }
