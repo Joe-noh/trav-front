@@ -46,4 +46,26 @@ export class TripService {
       );
     }
   }
+
+  update(trip: Trip) {
+    let params = {
+      title: trip.title,
+      plan: {
+        id: trip.plan.id,
+        body: trip.plan.body
+      }
+    };
+
+    this.api.putRequest(`/api/trips/${trip.id}`, params).subscribe(
+      data => {
+        this.store.trips.forEach((storedTrip, i) => {
+          if (storedTrip.id === trip.id) {
+            this.store.trips[i] = trip;
+          }
+          this.tripsObserver.next(this.store.trips);
+        });
+      },
+      error => console.log('Cound not update the trip.')
+    );
+  }
 }

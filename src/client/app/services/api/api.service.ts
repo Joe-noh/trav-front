@@ -18,6 +18,10 @@ export class ApiService {
     return this.http.post(this.backendUrl(path), JSON.stringify(params), this.options()).map(res => res.json()).share();
   }
 
+  putRequest(path: string, params: Object) {
+    return this.http.put(this.backendUrl(path), JSON.stringify(params), this.options()).map(res => res.json()).share();
+  }
+
   options(): RequestOptions {
     return new RequestOptions({
       headers: new Headers({
