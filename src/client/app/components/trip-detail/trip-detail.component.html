@@ -1,4 +1,5 @@
 <div *ngIf="editing">
+  <input [(ngModel)]="trip.title" />
   <textarea [(ngModel)]="trip.plan.body"></textarea>
 
   <button (click)="save()">Save</button>
