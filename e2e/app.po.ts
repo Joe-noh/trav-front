@@ -4,6 +4,6 @@ export class TravPage {
   }
 
   getParagraphText() {
-    return element(by.css('trav-app p')).getText();
+    return element(by.css('signin')).getText();
   }
 }

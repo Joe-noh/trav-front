@@ -1,4 +1,15 @@
-<h1>{{trip?.title}}</h1>
+<div *ngIf="editing">
+  <input [(ngModel)]="trip.title" />
+  <textarea [(ngModel)]="trip.plan.body"></textarea>
 
-<h2>plan</h2>
-<p>{{trip?.plan?.body}}</p>
+  <button (click)="save()">Save</button>
+</div>
+
+<div *ngIf="!editing">
+  <h1>{{trip.title}}</h1>
+
+  <h2>plan</h2>
+  <p>{{trip.plan.body}}</p>
+
+  <button (click)="startEditing()">Edit</button>
+</div>

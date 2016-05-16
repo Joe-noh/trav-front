@@ -1,10 +1,10 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/observer';
 import 'rxjs/add/operator/share';
 
-import {ApiService} from '../api';
-import {Trip} from '../../lib/trip';
+import {ApiService} from '../api/api.service';
+import {Trip} from '../../interfaces';
 
 @Injectable()
 export class TripService {
@@ -45,5 +45,46 @@ export class TripService {
         error => console.log('Could not load the trip.')
       );
     }
+  }
+
+  create(title: string, body: string) {
+    let params = {
+      trip: {
+        title: title,
+        plan: {
+          body: body
+        }
+      }
+    };
+
+    this.api.postRequest(`/api/trips`, params).subscribe(
+      data => {
+        this.store.trips.push(data.trip);
+        this.tripsObserver.next(this.store.trips);
+      },
+      error => console.log('Counld not create a trip')
+    );
+  }
+
+  update(trip: Trip) {
+    let params = {
+      title: trip.title,
+      plan: {
+        id: trip.plan.id,
+        body: trip.plan.body
+      }
+    };
+
+    this.api.putRequest(`/api/trips/${trip.id}`, params).subscribe(
+      data => {
+        this.store.trips.forEach((storedTrip, i) => {
+          if (storedTrip.id === trip.id) {
+            this.store.trips[i] = trip;
+          }
+          this.tripsObserver.next(this.store.trips);
+        });
+      },
+      error => console.log('Cound not update the trip.')
+    );
   }
 }

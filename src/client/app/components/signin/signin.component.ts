@@ -1,13 +1,12 @@
-import {Component, OnInit} from 'angular2/core';
-import {RouteConfig, RouteParams, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {RouteConfig, RouteParams, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
-import {AuthService} from '../../services/auth';
+import {AuthService} from '../../services';
 
 @Component({
-  moduleId: __moduleName,
   selector: 'signin',
-  templateUrl: 'signin.component.html',
-  styleUrls: ['signin.component.css'],
+  templateUrl: 'app/components/signin/signin.component.html',
+  styleUrls: ['app/components/signin/signin.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [AuthService]
 })

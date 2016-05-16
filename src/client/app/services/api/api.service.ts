@@ -1,10 +1,10 @@
-import {Injectable} from 'angular2/core';
-import {Http, Headers, RequestOptions} from 'angular2/http';
+import {Injectable} from '@angular/core';
+import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
-import {environment as env} from '../../environment';
 
-import {AuthService} from '../auth';
+import env from '../../environment';
+import {AuthService} from '../auth/auth.service';
 
 @Injectable()
 export class ApiService {
@@ -16,6 +16,10 @@ export class ApiService {
 
   postRequest(path: string, params: Object) {
     return this.http.post(this.backendUrl(path), JSON.stringify(params), this.options()).map(res => res.json()).share();
+  }
+
+  putRequest(path: string, params: Object) {
+    return this.http.put(this.backendUrl(path), JSON.stringify(params), this.options()).map(res => res.json()).share();
   }
 
   options(): RequestOptions {

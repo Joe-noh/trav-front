@@ -1,16 +1,18 @@
-import {bootstrap} from 'angular2/platform/browser';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {enableProdMode, provide} from 'angular2/core';
-import {environment} from './app/environment';
+/// <reference path="../../node_modules/@angular/common/index.d.ts" />
+/// <reference path="../../node_modules/@angular/compiler/index.d.ts" />
+/// <reference path="../../node_modules/@angular/core/index.d.ts" />
+/// <reference path="../../node_modules/@angular/platform-browser-dynamic/index.d.ts" />
 
-import {StorageService} from './app/services/storage';
-import {AuthService} from './app/services/auth';
-import {ApiService} from './app/services/api';
-import {TripService} from './app/services/trip';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {enableProdMode, provide} from '@angular/core';
+import env from './app/environment';
 
-import {TravApp} from './app/components/main';
+import {StorageService, AuthService, ApiService, TripService} from './app/services';
 
-if (environment.production) {
+import {TravApp} from './app/trav.component';
+
+if (env.production) {
   enableProdMode();
 }
 
