@@ -1,5 +1,16 @@
-<ul>
-  <li *ngFor="let trip of trips">
-    <trip [trip]="trip"></trip>
-  </li>
-</ul>
+<div *ngIf="editingNew">
+  <input type="text" [(ngModel)]="newTrip.title" />
+  <textarea [(ngModel)]="newTrip.body"></textarea>
+
+  <button (click)="save()">Save</button>
+</div>
+
+<div *ngIf="!editingNew">
+  <ul>
+    <li *ngFor="let trip of trips">
+      <trip [trip]="trip"></trip>
+    </li>
+  </ul>
+
+  <button (click)="editNewTrip()">New</button>
+</div>

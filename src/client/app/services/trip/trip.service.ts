@@ -47,6 +47,25 @@ export class TripService {
     }
   }
 
+  create(title: string, body: string) {
+    let params = {
+      trip: {
+        title: title,
+        plan: {
+          body: body
+        }
+      }
+    };
+
+    this.api.postRequest(`/api/trips`, params).subscribe(
+      data => {
+        this.store.trips.push(data.trip);
+        this.tripsObserver.next(this.store.trips);
+      },
+      error => console.log('Counld not create a trip')
+    );
+  }
+
   update(trip: Trip) {
     let params = {
       title: trip.title,

@@ -13,9 +13,12 @@ import {TripComponent} from '../trip/trip.component';
 })
 export class TripsComponent implements OnInit {
   private trips;
+  private newTrip;
+  private editingNew;
   private subscription: Subscription;
 
   constructor(private tripService: TripService) {
+    this.editingNew = false;
     this.subscription = this.tripService.trips.subscribe(trips => this.trips = trips);
   }
 
@@ -25,5 +28,15 @@ export class TripsComponent implements OnInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  editNewTrip() {
+    this.newTrip = {title: "", body: ""};
+    this.editingNew = true;
+  }
+
+  save() {
+    this.editingNew = false;
+    this.tripService.create(this.newTrip.title, this.newTrip.body);
   }
 }
